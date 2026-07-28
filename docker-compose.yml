@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      IPTOASN_DATASET_PATH: /app/data/ip2asn-v4.tsv.gz
+    volumes:
+      - ./data:/app/data
