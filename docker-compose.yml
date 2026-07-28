@@ -4,6 +4,7 @@ services:
     ports:
       - "8000:8000"
     environment:
+      API_TOKEN: ${API_TOKEN:-}
       IPTOASN_DATASET_PATH: /app/data/ip2asn-v4.tsv.gz
     volumes:
       - ./data:/app/data
