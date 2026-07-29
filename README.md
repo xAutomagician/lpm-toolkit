@@ -1,9 +1,9 @@
-# LPM Toolkit
+# LPM Toolkit: Longest Prefix Match for IP Lookups
 
-Local IP-to-ASN lookup API backed by a prefix tree.
+**LPM = Longest Prefix Match.**
 
-LPM means longest prefix match: given an IP address, find the most specific
-network prefix that contains it.
+Given an IP address, this service finds the most specific network prefix that
+contains it and returns ASN metadata.
 
 `lpm-toolkit` turns a public IP range dataset into a small local lookup service.
 It downloads the `iptoasn` TSV file, converts IP ranges into CIDR prefixes, puts
