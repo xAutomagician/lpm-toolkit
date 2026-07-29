@@ -9,7 +9,6 @@ import requests
 
 from app.domain import PrefixInfo, PrefixRange
 
-
 IPTOASN_V4_URL = "https://iptoasn.com/data/ip2asn-v4.tsv.gz"
 
 
@@ -49,10 +48,7 @@ def range_to_cidrs(start: str, end: str) -> list[str]:
     if int(start_ip) > int(end_ip):
         raise ValueError("IP range start must be less than or equal to end")
 
-    return [
-        str(network)
-        for network in ipaddress.summarize_address_range(start_ip, end_ip)
-    ]
+    return [str(network) for network in ipaddress.summarize_address_range(start_ip, end_ip)]
 
 
 def load_prefix_infos(path: Path) -> Iterator[PrefixInfo]:

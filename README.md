@@ -108,12 +108,26 @@ Without a token, or with a wrong token, the API returns `401 Unauthorized`.
 ## Commands
 
 ```bash
-make build   # build Docker image
-make up      # run API, requires API_TOKEN=...
-make down    # stop API
-make logs    # follow container logs
-make test    # run tests in Docker
-make smoke   # build tree and run one lookup in Docker
+make build     # build Docker image
+make up        # run API, requires API_TOKEN=...
+make down      # stop API
+make logs      # follow container logs
+make lint      # run Ruff checks in Docker
+make format    # format code with Ruff in Docker
+make fix       # run Ruff autofixes in Docker
+make test      # run tests in Docker
+make smoke     # build tree and run one lookup in Docker
+make check     # run lint and tests in Docker
+make hooks     # install pre-commit git hook
+make precommit # run pre-commit hooks for all files
+```
+
+`pre-commit` itself is installed on the host, but the configured hooks run Ruff
+inside Docker Compose:
+
+```bash
+python -m pip install pre-commit
+make hooks
 ```
 
 ## How It Works

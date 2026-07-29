@@ -9,7 +9,6 @@ import pytricia
 from app.dataset import IPTOASN_V4_URL, ensure_dataset, load_prefix_infos
 from app.domain import PrefixInfo
 
-
 DEFAULT_DATASET_PATH = Path("data/ip2asn-v4.tsv.gz")
 
 

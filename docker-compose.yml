@@ -7,4 +7,8 @@ services:
       API_TOKEN: ${API_TOKEN:-}
       IPTOASN_DATASET_PATH: /app/data/ip2asn-v4.tsv.gz
     volumes:
+      - ./app:/app/app
+      - ./tests:/app/tests
+      - ./pytest.ini:/app/pytest.ini
+      - ./pyproject.toml:/app/pyproject.toml
       - ./data:/app/data

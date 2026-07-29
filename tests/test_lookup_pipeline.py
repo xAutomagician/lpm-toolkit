@@ -20,9 +20,7 @@ class FakePrefixRepository:
 
 
 def test_range_to_cidrs_returns_minimal_prefixes():
-    assert range_to_cidrs("185.10.148.0", "185.10.151.255") == [
-        "185.10.148.0/22"
-    ]
+    assert range_to_cidrs("185.10.148.0", "185.10.151.255") == ["185.10.148.0/22"]
 
 
 def test_repository_gets_prefix_info_from_tsv(tmp_path):

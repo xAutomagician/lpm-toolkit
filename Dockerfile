@@ -27,6 +27,7 @@ WORKDIR /app
 COPY --from=builder /opt/venv /opt/venv
 COPY app ./app
 COPY pytest.ini .
+COPY pyproject.toml .
 COPY tests ./tests
 
 EXPOSE 8000

@@ -7,7 +7,6 @@ from app.api.v1.auth import require_api_token
 from app.domain import PrefixInfo
 from app.repository import IPrefixRepository
 
-
 router = APIRouter()
 
 

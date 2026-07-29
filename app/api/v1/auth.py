@@ -4,7 +4,6 @@ import secrets
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 
-
 API_TOKEN_ENV = "API_TOKEN"
 bearer_scheme = HTTPBearer(auto_error=False)
 
