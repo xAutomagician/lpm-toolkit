@@ -1,8 +1,8 @@
-# LPM Toolkit: Longest Prefix Match for IP Lookups
+# LPM Toolkit
 
-**LPM = Longest Prefix Match.**
+**Longest Prefix Match for local IP-to-ASN lookups.**
 
-Give the service an IP address, and it returns the most specific network prefix
+Give the service an IP address, and it finds the most specific network prefix
 that contains it:
 
 ```text
