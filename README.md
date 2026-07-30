@@ -9,6 +9,8 @@ that contains it:
 185.10.149.1 -> 185.10.148.0/22 -> ASN 197558, DE, MUTH
 ```
 
+![Lookup demo](docs/demo/lookup.png)
+
 ## Why
 
 External IP intelligence APIs are fine for one-off lookups. They are painful for
@@ -69,11 +71,8 @@ make build
 make up
 ```
 
-On first start the app downloads the dataset to:
-
-```text
-data/ip2asn-v4.tsv.gz
-```
+The first start may take a little longer while the dataset is downloaded and
+cached.
 
 Open Swagger UI:
 
@@ -119,9 +118,3 @@ Errors:
 | `IPTOASN_DATASET_PATH` | no | `data/ip2asn-v4.tsv.gz` |
 | `IPTOASN_DATASET_URL` | no | `https://iptoasn.com/data/ip2asn-v4.tsv.gz` |
 | `IPTOASN_DOWNLOAD_TIMEOUT` | no | `30` |
-
-## Demo
-
-![Swagger UI](docs/demo/swagger.png)
-
-![Lookup demo](docs/demo/lookup.png)
