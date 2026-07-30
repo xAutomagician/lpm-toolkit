@@ -1,23 +1,16 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 
 from app.api.v1.router import api_router
-from app.core.config import settings
+from app.repository import build_prefix_repository
 
 
 def create_app() -> FastAPI:
     app = FastAPI()
-
-    app.state
-
     app.include_router(api_router, prefix="/api/v1")
 
     @app.on_event("startup")
-    async def startup():
-        ...
-
-    @app.on_event("shutdown")
-    async def shutdown():
-        ...
+    async def startup() -> None:
+        app.state.prefix_repository = build_prefix_repository()
 
     return app
 
