@@ -1,6 +1,6 @@
 # LPM Toolkit
 
-API for **IP-to-ASN lookups.**
+Simple API for **IP-to-ASN lookups.**
 
 Give the service an IP address, and it finds the most specific network prefix
 that contains it:
