@@ -13,7 +13,8 @@ def create_app() -> FastAPI:
 
     @app.on_event("startup")
     async def startup() -> None:
-        app.state.prefix_repository = InMemoryPrefixRepository(get_prefix_infos())
+        app.state.prefix_repository = InMemoryPrefixRepository()
+        app.state.prefix_repository.load(get_prefix_infos())
 
     return app
 
