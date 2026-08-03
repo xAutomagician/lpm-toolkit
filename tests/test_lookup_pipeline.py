@@ -5,8 +5,8 @@ from fastapi import HTTPException
 
 from app.api.v1.lookup import get_ip_lookup
 from app.dataset import load_prefix_infos, range_to_cidrs
-from app.domain import PrefixInfo
 from app.repository import PyTriciaPrefixRepository
+from app.schemas import PrefixInfo
 
 
 class FakePrefixRepository:

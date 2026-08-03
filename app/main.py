@@ -1,18 +1,19 @@
 from fastapi import FastAPI
 
-from app.api.v1.auth import get_api_token
+from app import config
 from app.api.v1.router import api_router
-from app.repository import build_prefix_repository
+from app.dataset import get_prefix_infos
+from app.repository import InMemoryPrefixRepository
 
 
 def create_app() -> FastAPI:
     app = FastAPI()
+    app.state.config = config
     app.include_router(api_router, prefix="/api/v1")
 
     @app.on_event("startup")
     async def startup() -> None:
-        get_api_token()
-        app.state.prefix_repository = build_prefix_repository()
+        app.state.prefix_repository = InMemoryPrefixRepository(get_prefix_infos())
 
     return app
 
